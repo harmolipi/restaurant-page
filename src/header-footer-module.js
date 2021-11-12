@@ -9,18 +9,30 @@ const createNavbar = () => {
   const navbarTitle = document.createElement('h4');
   navbarTitle.classList.add('title', 'is-4', 'has-text-white');
   navbarTitle.innerHTML = 'Good Eats Co.';
+  const navbarBurger = document.createElement('div');
+  navbarBurger.classList.add('navbar-burger');
+  navbarBurger.setAttribute('id', 'navBurger');
+  const navbarBurgerLine1 = document.createElement('span');
+  const navbarBurgerLine2 = document.createElement('span');
+  const navbarBurgerLine3 = document.createElement('span');
   const navbarMenu = document.createElement('div');
   navbarMenu.classList.add('navbar-menu');
+  navbarMenu.setAttribute('id', 'navMenu');
   const navbarEnd = document.createElement('div');
   navbarEnd.classList.add('navbar-end');
 
   navbar.appendChild(navbarBrand);
   navbarBrand.appendChild(navbarBrandItem);
+  navbarBrand.appendChild(navbarBurger);
+  navbarBurger.appendChild(navbarBurgerLine1);
+  navbarBurger.appendChild(navbarBurgerLine2);
+  navbarBurger.appendChild(navbarBurgerLine3);
   navbarBrandItem.appendChild(navbarTitle);
   navbar.appendChild(navbarMenu);
   navbarMenu.appendChild(navbarEnd);
   navbarEnd.appendChild(createNavbarLink('Foods', 'foods'));
   navbarEnd.appendChild(createNavbarLink('Contact', 'contact'));
+  addBurgerEventListener();
   return navbar;
 };
 
@@ -58,7 +70,7 @@ const createFooter = () => {
   const footerContent = document.createElement('div');
   footerContent.classList.add('content', 'has-text-centered');
   const footerText = document.createElement('p');
-  footerText.innerHTML = '&copy; 2019 Good Eats Co.';
+  footerText.innerHTML = '&copy; 2021 Good Eats Co.';
   const footerTextName = document.createElement('p');
   footerTextName.innerHTML = 'Created by: <a href="https://www.github.com/harmolipi" target="_blank">@harmolipi</a>';
   
@@ -66,6 +78,17 @@ const createFooter = () => {
   footerContent.appendChild(footerText);
   footerContent.appendChild(footerTextName);
   return footer;
+};
+
+const addBurgerEventListener = () => {
+  document.addEventListener('DOMContentLoaded', () => {
+    const burger = document.querySelector('#navBurger');
+    burger.addEventListener('click', () => {
+      const menu = document.querySelector('#navMenu');
+      burger.classList.toggle('is-active');
+      menu.classList.toggle('is-active');
+    });
+  });
 };
 
 export {

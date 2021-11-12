@@ -11,7 +11,7 @@ const loadPage = () => {
   homepage.setAttribute('data-page', 'homepage');
   foodsPage.setAttribute('data-page', 'foods');
   contactPage.setAttribute('data-page', 'contact');
-  homepage.classList.add('is-active');
+  homepage.classList.add('is-active-page');
   foodsPage.classList.add('is-hidden');
   contactPage.classList.add('is-hidden');
 
@@ -27,11 +27,11 @@ const loadPage = () => {
 const setEventListeners = () => {
   const navbarLinks = document.querySelectorAll('.navbar-item');
   navbarLinks.forEach(link => link.addEventListener('click', () => {
-    const currentPage = document.querySelector('.is-active');
+    const currentPage = document.querySelector('.is-active-page');
     const newPage = document.querySelector(`[data-page=${link.id}]`);
-    currentPage.classList.remove('is-active');
+    currentPage.classList.remove('is-active-page');
     currentPage.classList.add('is-hidden');
-    newPage.classList.add('is-active');
+    newPage.classList.add('is-active-page');
     newPage.classList.remove('is-hidden');
   }));
 };
