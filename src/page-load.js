@@ -2,15 +2,19 @@ const loadPage = () => {
   const content = document.querySelector('#content');
   const homepage = createHomepage();
   const foodsPage = createFoodsPage();
+  const contactPage = createContactPage();
   homepage.setAttribute('data-page', 'homepage');
   foodsPage.setAttribute('data-page', 'foods');
+  contactPage.setAttribute('data-page', 'contact');
   homepage.classList.add('is-active');
   foodsPage.classList.add('is-hidden');
+  contactPage.classList.add('is-hidden');
 
   content.appendChild(createNavbar());
   content.appendChild(createHero());
   content.appendChild(homepage);
   content.appendChild(foodsPage);
+  content.appendChild(contactPage);
   content.appendChild(createFooter());
   setEventListeners();
 }
@@ -124,6 +128,31 @@ const createBlockSpacer = () => {
   return blockSpacer;
 }
 
+const createFormField = (label, type) => {
+  const formField = document.createElement('div');
+  formField.classList.add('field');
+  const formControl = document.createElement('div');
+  formControl.classList.add('control');
+  
+  if(type === 'button') {
+    const formButton = document.createElement('button');
+    formButton.classList.add('button', 'is-primary');
+    formButton.innerHTML = label;
+    formField.appendChild(formButton);
+  } else {
+    const formLabel = document.createElement('label');
+    formLabel.classList.add('label');
+    formLabel.innerHTML = label;
+    formField.appendChild(formLabel);
+    formField.appendChild(formControl);
+    const formInput = document.createElement(type === 'textarea' ? 'textarea' : 'input');
+    formInput.classList.add('input', type);
+    formInput.setAttribute('type', type);
+    formControl.appendChild(formInput);
+  }
+  return formField;
+}
+
 const createFooter = () => {
   const footer = document.createElement('footer');
   footer.classList.add('footer');
@@ -171,13 +200,36 @@ const createFoodsPage = () => {
     createFoodItem('/src/tiropita.jpg', 'Tiropita')
   ]
   const foodsPage = document.createElement('div');
+  const foodsPageTitle = document.createElement('h2');
+  foodsPageTitle.classList.add('title', 'is-2');
+  foodsPageTitle.innerHTML = 'Foods';
   foodsPage.setAttribute('id', 'foods-page');
   foodsPage.classList.add('section', 'container');
+  foodsPage.appendChild(foodsPageTitle);
   foodsPage.appendChild(createFoodDisplay(foodsPageRow1));
   foodsPage.appendChild(createFoodDisplay(foodsPageRow2));
   foodsPage.appendChild(createFoodDisplay(foodsPageRow3));
   foodsPage.appendChild(createBlockSpacer());
   return foodsPage;
+}
+
+const createContactPage = () => {
+  const contactPage = document.createElement('div');
+  contactPage.setAttribute('id', 'contact');
+  contactPage.classList.add('section', 'container');
+  const contactPageTitle = document.createElement('h2');
+  contactPageTitle.classList.add('title', 'is-2');
+  contactPageTitle.innerHTML = 'Contact Us';
+
+  const contactForm = document.createElement('form');
+  contactForm.appendChild(createFormField('Name', 'text'));
+  contactForm.appendChild(createFormField('Email', 'email'));
+  contactForm.appendChild(createFormField('Message', 'textarea'));
+  contactForm.appendChild(createFormField('Submit', 'button'));
+
+  contactPage.appendChild(contactPageTitle);
+  contactPage.appendChild(contactForm);
+  return contactPage;
 }
 
 const setEventListeners = () => {
