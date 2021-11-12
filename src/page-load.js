@@ -77,6 +77,7 @@ const createIntro = () => {
   const introSection = document.createElement('section');
   introSection.classList.add('section', 'container');
   const introText = document.createElement('p');
+  introText.classList.add('is-size-5');
   introText.innerHTML = 'Hello and welcome to my new Greek restaurant! We are very good at cooking and hope that you are not. Come eat our authentic foods!';
   introSection.appendChild(introText);
   return introSection;
