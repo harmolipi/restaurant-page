@@ -68,26 +68,15 @@ const createIntro = () => {
   return introSection;
 }
 
-const createFoodDisplay = () => {
+const createFoodDisplay = (foodItems) => {
   const foodDisplay = document.createElement('div');
   foodDisplay.classList.add('container', 'block');
   const foodDisplaySection = document.createElement('section');
   foodDisplaySection.classList.add('food', 'tile', 'is-ancestor');
   
   foodDisplay.appendChild(foodDisplaySection);
-  foodDisplaySection.appendChild(createFoodItem('/src/souvlaki-meal.jpg', 'Souvlaki'));
-  foodDisplaySection.appendChild(createFoodItem('/src/pastitsio.jpg', 'Pastitsio'));
-  foodDisplaySection.appendChild(createFoodItem('/src/gyro.jpg', 'Gyro'));
+  foodItems.forEach(food => foodDisplaySection.appendChild(food));
   return foodDisplay;
-}
-
-const createHomepage = () => {
-  const homepage = document.createElement('div');
-  homepage.setAttribute('id', 'homePage');
-  homepage.appendChild(createIntro());
-  homepage.appendChild(createFoodDisplay());
-  homepage.appendChild(createBlockSpacer());
-  return homepage;
 }
 
 const createFoodItem = (picture, label) => {
@@ -139,6 +128,20 @@ const createFooter = () => {
   footerContent.appendChild(footerText);
   footerContent.appendChild(footerTextName);
   return footer;
+}
+
+const createHomepage = () => {
+  const homepageFoods = [
+    createFoodItem('/src/souvlaki-meal.jpg', 'Souvlaki'),
+    createFoodItem('/src/pastitsio.jpg', 'Pastitsio'),
+    createFoodItem('/src/gyro.jpg', 'Gyro')
+  ]
+  const homepage = document.createElement('div');
+  homepage.setAttribute('id', 'homePage');
+  homepage.appendChild(createIntro());
+  homepage.appendChild(createFoodDisplay(homepageFoods));
+  homepage.appendChild(createBlockSpacer());
+  return homepage;
 }
 
 export default loadPage;
