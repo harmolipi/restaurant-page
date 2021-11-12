@@ -1,1 +1,3 @@
-console.log('Hello world!');
+import pageLoad from './page-load';
+
+pageLoad();
