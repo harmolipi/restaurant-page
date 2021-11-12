@@ -1,9 +1,18 @@
 const loadPage = () => {
   const content = document.querySelector('#content');
+  const homepage = createHomepage();
+  const foodsPage = createFoodsPage();
+  homepage.setAttribute('data-page', 'homepage');
+  foodsPage.setAttribute('data-page', 'foods');
+  homepage.classList.add('is-active');
+  foodsPage.classList.add('is-hidden');
+
   content.appendChild(createNavbar());
   content.appendChild(createHero());
-  content.appendChild(createHomepage());
+  content.appendChild(homepage);
+  content.appendChild(foodsPage);
   content.appendChild(createFooter());
+  setEventListeners();
 }
 
 const createNavbar = () => {
@@ -13,6 +22,7 @@ const createNavbar = () => {
   navbarBrand.classList.add('navbar-brand');
   const navbarBrandItem = document.createElement('a');
   navbarBrandItem.classList.add('navbar-item');
+  navbarBrandItem.setAttribute('id', 'homepage');
   const navbarTitle = document.createElement('h4');
   navbarTitle.classList.add('title', 'is-4', 'has-text-white');
   navbarTitle.innerHTML = 'Good Eats Co.';
@@ -26,7 +36,7 @@ const createNavbar = () => {
   navbarBrandItem.appendChild(navbarTitle);
   navbar.appendChild(navbarMenu);
   navbarMenu.appendChild(navbarEnd);
-  navbarEnd.appendChild(createNavbarLink('Gallery', 'gallery'));
+  navbarEnd.appendChild(createNavbarLink('Foods', 'foods'));
   navbarEnd.appendChild(createNavbarLink('Contact', 'contact'));
   return navbar;
 }
@@ -137,11 +147,50 @@ const createHomepage = () => {
     createFoodItem('/src/gyro.jpg', 'Gyro')
   ]
   const homepage = document.createElement('div');
-  homepage.setAttribute('id', 'homePage');
+  homepage.setAttribute('id', 'homepage');
   homepage.appendChild(createIntro());
   homepage.appendChild(createFoodDisplay(homepageFoods));
   homepage.appendChild(createBlockSpacer());
   return homepage;
+}
+
+const createFoodsPage = () => {
+  const foodsPageRow1 = [
+    createFoodItem('/src/souvlaki-meal.jpg', 'Souvlaki'),
+    createFoodItem('/src/pastitsio.jpg', 'Pastitsio'),
+    createFoodItem('/src/gyro.jpg', 'Gyro')
+  ]
+  const foodsPageRow2 = [
+    createFoodItem('/src/avgolemono.jpg', 'Avgolemono'),
+    createFoodItem('/src/dolmades.jpg', 'Dolmades'),
+    createFoodItem('/src/saganaki.jpg', 'Saganaki')
+  ]
+  const foodsPageRow3 = [
+    createFoodItem('/src/spanakopita.jpg', 'Spanakopita'),
+    createFoodItem('/src/lamb.jpg', 'Lamb'),
+    createFoodItem('/src/tiropita.jpg', 'Tiropita')
+  ]
+  const foodsPage = document.createElement('div');
+  foodsPage.setAttribute('id', 'foods-page');
+  foodsPage.classList.add('section', 'container');
+  foodsPage.appendChild(createFoodDisplay(foodsPageRow1));
+  foodsPage.appendChild(createFoodDisplay(foodsPageRow2));
+  foodsPage.appendChild(createFoodDisplay(foodsPageRow3));
+  foodsPage.appendChild(createBlockSpacer());
+  return foodsPage;
+}
+
+const setEventListeners = () => {
+  const navbarLinks = document.querySelectorAll('.navbar-item');
+  console.log(navbarLinks);
+  navbarLinks.forEach(link => link.addEventListener('click', () => {
+    const currentPage = document.querySelector('.is-active');
+    const newPage = document.querySelector(`[data-page=${link.id}]`);
+    currentPage.classList.remove('is-active');
+    currentPage.classList.add('is-hidden');
+    newPage.classList.add('is-active');
+    newPage.classList.remove('is-hidden');
+  }));
 }
 
 export default loadPage;
