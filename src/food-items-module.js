@@ -25,7 +25,7 @@ const createFoodItem = (picture, label) => {
   return parentTile;
 };
 
-const createFoodDisplay = (foodItems) => {
+const createFoodDisplay = foodItems => {
   const foodDisplay = document.createElement('div');
   foodDisplay.classList.add('container', 'block');
   const foodDisplaySection = document.createElement('section');
