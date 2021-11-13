@@ -73,10 +73,13 @@ const createFooter = () => {
   footerText.innerHTML = '&copy; 2021 Good Eats Co.';
   const footerTextName = document.createElement('p');
   footerTextName.innerHTML = 'Created by: <a href="https://www.github.com/harmolipi" target="_blank">@harmolipi</a>';
-  
+  const footerTextGithub = document.createElement('p');
+  footerTextGithub.innerHTML = '<a href="https://www.github.com/harmolipi/restaurant-page" target="_blank">See on Github.</a>';
+
   footer.appendChild(footerContent);
   footerContent.appendChild(footerText);
   footerContent.appendChild(footerTextName);
+  footerContent.appendChild(footerTextGithub);
   return footer;
 };
 
