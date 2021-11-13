@@ -4,7 +4,10 @@ import createFoodsPage from "./page-foods-module";
 import createContactPage from "./page-contact-module";
 
 const loadPage = () => {
-  const content = document.querySelector('#content');
+  const body = document.querySelector('body');
+  const content = document.createElement('div');
+  content.setAttribute('id', 'content');
+  body.prepend(content);
   const homepage = createHomepage();
   const foodsPage = createFoodsPage();
   const contactPage = createContactPage();

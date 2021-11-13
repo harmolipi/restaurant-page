@@ -136,7 +136,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"createFoodDisplay\": () => (/* binding */ createFoodDisplay),\n/* harmony export */   \"createFoodItem\": () => (/* binding */ createFoodItem)\n/* harmony export */ });\nconst createFoodItem = (picture, label) => {\n  const parentTile = document.createElement('div');\n  parentTile.classList.add('tile', 'is-parent', 'is-4');\n  const childTile = document.createElement('div');\n  childTile.classList.add('tile', 'is-child', 'card');\n  const foodCardImageContainer = document.createElement('div');\n  foodCardImageContainer.classList.add('card-image');\n  const foodImageContainer = document.createElement('figure');\n  foodImageContainer.classList.add('image', 'is-4by3');\n  const foodImage = document.createElement('img');\n  foodImage.src = picture;\n  \n  parentTile.appendChild(childTile);\n  childTile.appendChild(foodCardImageContainer);\n  foodCardImageContainer.appendChild(foodImageContainer);\n  foodImageContainer.appendChild(foodImage);\n\n  if(label) {\n    const foodNameLabel = document.createElement('div');\n    foodNameLabel.classList.add('food-name-label', 'card-content');\n    const foodName = document.createElement('p');\n    foodName.classList.add('has-text-centered', 'is-size-4');\n    foodName.innerHTML = label;\n    childTile.appendChild(foodNameLabel);\n    foodNameLabel.appendChild(foodName);\n  }\n  return parentTile;\n};\n\nconst createFoodDisplay = (foodItems) => {\n  const foodDisplay = document.createElement('div');\n  foodDisplay.classList.add('container', 'block');\n  const foodDisplaySection = document.createElement('section');\n  foodDisplaySection.classList.add('food', 'tile', 'is-ancestor');\n  \n  foodDisplay.appendChild(foodDisplaySection);\n  foodItems.forEach(food => foodDisplaySection.appendChild(food));\n  return foodDisplay;\n};\n\n\n\n//# sourceURL=webpack://restaurant-page/./src/food-items-module.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"createFoodDisplay\": () => (/* binding */ createFoodDisplay),\n/* harmony export */   \"createFoodItem\": () => (/* binding */ createFoodItem)\n/* harmony export */ });\nconst createFoodItem = (picture, label) => {\n  const parentTile = document.createElement('div');\n  parentTile.classList.add('tile', 'is-parent', 'is-4');\n  const childTile = document.createElement('div');\n  childTile.classList.add('tile', 'is-child', 'card');\n  const foodCardImageContainer = document.createElement('div');\n  foodCardImageContainer.classList.add('card-image');\n  const foodImageContainer = document.createElement('figure');\n  foodImageContainer.classList.add('image', 'is-4by3');\n  const foodImage = picture;\n  parentTile.appendChild(childTile);\n  childTile.appendChild(foodCardImageContainer);\n  foodCardImageContainer.appendChild(foodImageContainer);\n  foodImageContainer.appendChild(foodImage);\n\n  if(label) {\n    const foodNameLabel = document.createElement('div');\n    foodNameLabel.classList.add('food-name-label', 'card-content');\n    const foodName = document.createElement('p');\n    foodName.classList.add('has-text-centered', 'is-size-4');\n    foodName.innerHTML = label;\n    childTile.appendChild(foodNameLabel);\n    foodNameLabel.appendChild(foodName);\n  }\n  return parentTile;\n};\n\nconst createFoodDisplay = (foodItems) => {\n  const foodDisplay = document.createElement('div');\n  foodDisplay.classList.add('container', 'block');\n  const foodDisplaySection = document.createElement('section');\n  foodDisplaySection.classList.add('food', 'tile', 'is-ancestor');\n  \n  foodDisplay.appendChild(foodDisplaySection);\n  foodItems.forEach(food => foodDisplaySection.appendChild(food));\n  return foodDisplay;\n};\n\n\n\n//# sourceURL=webpack://restaurant-page/./src/food-items-module.js?");
 
 /***/ }),
 
@@ -156,7 +156,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _page_load__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./page-load */ \"./src/page-load.js\");\n\n\n\n(0,_page_load__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n\n\n//# sourceURL=webpack://restaurant-page/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _page_load__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./page-load */ \"./src/page-load.js\");\n\n\n\n(0,_page_load__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n\n//# sourceURL=webpack://restaurant-page/./src/index.js?");
 
 /***/ }),
 
@@ -176,7 +176,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _food_items_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./food-items-module */ \"./src/food-items-module.js\");\n/* harmony import */ var _block_spacer_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./block-spacer-module */ \"./src/block-spacer-module.js\");\n\n\n\nconst createFoodsPage = () => {\n  const foodsPageRow1 = [\n    (0,_food_items_module__WEBPACK_IMPORTED_MODULE_0__.createFoodItem)('/src/souvlaki-meal.jpg', 'Souvlaki'),\n    (0,_food_items_module__WEBPACK_IMPORTED_MODULE_0__.createFoodItem)('/src/pastitsio.jpg', 'Pastitsio'),\n    (0,_food_items_module__WEBPACK_IMPORTED_MODULE_0__.createFoodItem)('/src/gyro.jpg', 'Gyro')\n  ]\n  const foodsPageRow2 = [\n    (0,_food_items_module__WEBPACK_IMPORTED_MODULE_0__.createFoodItem)('/src/avgolemono.jpg', 'Avgolemono'),\n    (0,_food_items_module__WEBPACK_IMPORTED_MODULE_0__.createFoodItem)('/src/dolmades.jpg', 'Dolmades'),\n    (0,_food_items_module__WEBPACK_IMPORTED_MODULE_0__.createFoodItem)('/src/saganaki.jpg', 'Saganaki')\n  ]\n  const foodsPageRow3 = [\n    (0,_food_items_module__WEBPACK_IMPORTED_MODULE_0__.createFoodItem)('/src/spanakopita.jpg', 'Spanakopita'),\n    (0,_food_items_module__WEBPACK_IMPORTED_MODULE_0__.createFoodItem)('/src/lamb.jpg', 'Lamb'),\n    (0,_food_items_module__WEBPACK_IMPORTED_MODULE_0__.createFoodItem)('/src/tiropita.jpg', 'Tiropita')\n  ]\n  const foodsPage = document.createElement('div');\n  const foodsPageTitle = document.createElement('h2');\n  foodsPageTitle.classList.add('title', 'is-2');\n  foodsPageTitle.innerHTML = 'Foods';\n  foodsPage.setAttribute('id', 'foods-page');\n  foodsPage.classList.add('section', 'container');\n  foodsPage.appendChild(foodsPageTitle);\n  foodsPage.appendChild((0,_food_items_module__WEBPACK_IMPORTED_MODULE_0__.createFoodDisplay)(foodsPageRow1));\n  foodsPage.appendChild((0,_food_items_module__WEBPACK_IMPORTED_MODULE_0__.createFoodDisplay)(foodsPageRow2));\n  foodsPage.appendChild((0,_food_items_module__WEBPACK_IMPORTED_MODULE_0__.createFoodDisplay)(foodsPageRow3));\n  foodsPage.appendChild((0,_block_spacer_module__WEBPACK_IMPORTED_MODULE_1__.createBlockSpacer)());\n  return foodsPage;\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createFoodsPage);\n\n//# sourceURL=webpack://restaurant-page/./src/page-foods-module.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _food_items_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./food-items-module */ \"./src/food-items-module.js\");\n/* harmony import */ var _block_spacer_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./block-spacer-module */ \"./src/block-spacer-module.js\");\n/* harmony import */ var _souvlaki_meal_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./souvlaki-meal.jpg */ \"./src/souvlaki-meal.jpg\");\n/* harmony import */ var _src_pastitsio_jpg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../src/pastitsio.jpg */ \"./src/pastitsio.jpg\");\n/* harmony import */ var _src_gyro_jpg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../src/gyro.jpg */ \"./src/gyro.jpg\");\n/* harmony import */ var _src_avgolemono_jpg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../src/avgolemono.jpg */ \"./src/avgolemono.jpg\");\n/* harmony import */ var _src_dolmades_jpg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../src/dolmades.jpg */ \"./src/dolmades.jpg\");\n/* harmony import */ var _src_saganaki_jpg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../../src/saganaki.jpg */ \"./src/saganaki.jpg\");\n/* harmony import */ var _src_lamb_jpg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../../src/lamb.jpg */ \"./src/lamb.jpg\");\n/* harmony import */ var _src_spanakopita_jpg__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../../../src/spanakopita.jpg */ \"./src/spanakopita.jpg\");\n/* harmony import */ var _src_tiropita_jpg__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../../../src/tiropita.jpg */ \"./src/tiropita.jpg\");\n\n\n\n\n\n\n\n\n\n\n\n\nconst createFoodsPage = () => {\n  const foodImages = createImageElements();\n  const foodsPageRow1 = [\n    (0,_food_items_module__WEBPACK_IMPORTED_MODULE_0__.createFoodItem)(foodImages[0], 'Souvlaki'),\n    (0,_food_items_module__WEBPACK_IMPORTED_MODULE_0__.createFoodItem)(foodImages[1], 'Pastitsio'),\n    (0,_food_items_module__WEBPACK_IMPORTED_MODULE_0__.createFoodItem)(foodImages[2], 'Gyro')\n  ]\n  const foodsPageRow2 = [\n    (0,_food_items_module__WEBPACK_IMPORTED_MODULE_0__.createFoodItem)(foodImages[3], 'Avgolemono'),\n    (0,_food_items_module__WEBPACK_IMPORTED_MODULE_0__.createFoodItem)(foodImages[4], 'Dolmades'),\n    (0,_food_items_module__WEBPACK_IMPORTED_MODULE_0__.createFoodItem)(foodImages[5], 'Saganaki')\n  ]\n  const foodsPageRow3 = [\n    (0,_food_items_module__WEBPACK_IMPORTED_MODULE_0__.createFoodItem)(foodImages[6], 'Spanakopita'),\n    (0,_food_items_module__WEBPACK_IMPORTED_MODULE_0__.createFoodItem)(foodImages[7], 'Lamb'),\n    (0,_food_items_module__WEBPACK_IMPORTED_MODULE_0__.createFoodItem)(foodImages[8], 'Tiropita')\n  ]\n  const foodsPage = document.createElement('div');\n  const foodsPageTitle = document.createElement('h2');\n  foodsPageTitle.classList.add('title', 'is-2');\n  foodsPageTitle.innerHTML = 'Foods';\n  foodsPage.setAttribute('id', 'foods-page');\n  foodsPage.classList.add('section', 'container');\n  foodsPage.appendChild(foodsPageTitle);\n  foodsPage.appendChild((0,_food_items_module__WEBPACK_IMPORTED_MODULE_0__.createFoodDisplay)(foodsPageRow1));\n  foodsPage.appendChild((0,_food_items_module__WEBPACK_IMPORTED_MODULE_0__.createFoodDisplay)(foodsPageRow2));\n  foodsPage.appendChild((0,_food_items_module__WEBPACK_IMPORTED_MODULE_0__.createFoodDisplay)(foodsPageRow3));\n  foodsPage.appendChild((0,_block_spacer_module__WEBPACK_IMPORTED_MODULE_1__.createBlockSpacer)());\n  return foodsPage;\n};\n\nconst createImageElements = () => {\n  const souvlaki = new Image();\n  souvlaki.src = _souvlaki_meal_jpg__WEBPACK_IMPORTED_MODULE_2__;\n  const pastitsio = new Image();\n  pastitsio.src = _src_pastitsio_jpg__WEBPACK_IMPORTED_MODULE_3__;\n  const gyro = new Image();\n  gyro.src = _src_gyro_jpg__WEBPACK_IMPORTED_MODULE_4__;\n  const avgolemono = new Image();\n  avgolemono.src = _src_avgolemono_jpg__WEBPACK_IMPORTED_MODULE_5__;\n  const dolmades = new Image();\n  dolmades.src = _src_dolmades_jpg__WEBPACK_IMPORTED_MODULE_6__;\n  const saganaki = new Image();\n  saganaki.src = _src_saganaki_jpg__WEBPACK_IMPORTED_MODULE_7__;\n  const lamb = new Image();\n  lamb.src = _src_lamb_jpg__WEBPACK_IMPORTED_MODULE_8__;\n  const spanakopita = new Image();\n  spanakopita.src = _src_spanakopita_jpg__WEBPACK_IMPORTED_MODULE_9__;\n  const tiropita = new Image();\n  tiropita.src = _src_tiropita_jpg__WEBPACK_IMPORTED_MODULE_10__;\n  const imageElements = [\n    souvlaki,\n    pastitsio,\n    gyro,\n    avgolemono,\n    dolmades,\n    saganaki,\n    spanakopita,\n    lamb,\n    tiropita\n  ];\n  return imageElements;\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createFoodsPage);\n\n//# sourceURL=webpack://restaurant-page/./src/page-foods-module.js?");
 
 /***/ }),
 
@@ -186,7 +186,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _food_items_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./food-items-module */ \"./src/food-items-module.js\");\n/* harmony import */ var _block_spacer_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./block-spacer-module */ \"./src/block-spacer-module.js\");\n\n\n\nconst createHomepage = () => {\n  const homepageFoods = [\n    (0,_food_items_module__WEBPACK_IMPORTED_MODULE_0__.createFoodItem)('/src/souvlaki-meal.jpg', 'Souvlaki'),\n    (0,_food_items_module__WEBPACK_IMPORTED_MODULE_0__.createFoodItem)('/src/pastitsio.jpg', 'Pastitsio'),\n    (0,_food_items_module__WEBPACK_IMPORTED_MODULE_0__.createFoodItem)('/src/gyro.jpg', 'Gyro')\n  ]\n  const homepage = document.createElement('div');\n  homepage.setAttribute('id', 'homepage');\n  homepage.appendChild(createIntro());\n  homepage.appendChild((0,_food_items_module__WEBPACK_IMPORTED_MODULE_0__.createFoodDisplay)(homepageFoods));\n  homepage.appendChild((0,_block_spacer_module__WEBPACK_IMPORTED_MODULE_1__.createBlockSpacer)());\n  return homepage;\n};\n\nconst createIntro = () => {\n  const introSection = document.createElement('section');\n  introSection.classList.add('section', 'container');\n  const introText = document.createElement('p');\n  introText.classList.add('is-size-5');\n  introText.innerHTML = 'Hello and welcome to my new Greek restaurant! We are very good at cooking and hope that you are not. Come eat our authentic foods!';\n  introSection.appendChild(introText);\n  return introSection;\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createHomepage);\n\n//# sourceURL=webpack://restaurant-page/./src/page-home-module.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _food_items_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./food-items-module */ \"./src/food-items-module.js\");\n/* harmony import */ var _block_spacer_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./block-spacer-module */ \"./src/block-spacer-module.js\");\n/* harmony import */ var _souvlaki_meal_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./souvlaki-meal.jpg */ \"./src/souvlaki-meal.jpg\");\n/* harmony import */ var _src_pastitsio_jpg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../src/pastitsio.jpg */ \"./src/pastitsio.jpg\");\n/* harmony import */ var _src_gyro_jpg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../src/gyro.jpg */ \"./src/gyro.jpg\");\n\n\n\n\n\n\nconst createHomepage = () => {\n  const souvlakiPicture = new Image();\n  const pastitsioPicture = new Image();\n  const gyroPicture = new Image();\n  souvlakiPicture.src = _souvlaki_meal_jpg__WEBPACK_IMPORTED_MODULE_2__;\n  pastitsioPicture.src = _src_pastitsio_jpg__WEBPACK_IMPORTED_MODULE_3__;\n  gyroPicture.src = _src_gyro_jpg__WEBPACK_IMPORTED_MODULE_4__;\n  const homepageFoods = [\n    (0,_food_items_module__WEBPACK_IMPORTED_MODULE_0__.createFoodItem)(souvlakiPicture, 'Souvlaki'),\n    (0,_food_items_module__WEBPACK_IMPORTED_MODULE_0__.createFoodItem)(pastitsioPicture, 'Pastitsio'),\n    (0,_food_items_module__WEBPACK_IMPORTED_MODULE_0__.createFoodItem)(gyroPicture, 'Gyro')\n  ]\n  const homepage = document.createElement('div');\n  homepage.setAttribute('id', 'homepage');\n  homepage.appendChild(createIntro());\n  homepage.appendChild((0,_food_items_module__WEBPACK_IMPORTED_MODULE_0__.createFoodDisplay)(homepageFoods));\n  homepage.appendChild((0,_block_spacer_module__WEBPACK_IMPORTED_MODULE_1__.createBlockSpacer)());\n  return homepage;\n};\n\nconst createIntro = () => {\n  const introSection = document.createElement('section');\n  introSection.classList.add('section', 'container');\n  const introText = document.createElement('p');\n  introText.classList.add('is-size-5');\n  introText.innerHTML = 'Hello and welcome to my new Greek restaurant! We are very good at cooking and hope that you are not. Come eat our authentic foods!';\n  introSection.appendChild(introText);\n  return introSection;\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createHomepage);\n\n//# sourceURL=webpack://restaurant-page/./src/page-home-module.js?");
 
 /***/ }),
 
@@ -196,7 +196,97 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _header_footer_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./header-footer-module */ \"./src/header-footer-module.js\");\n/* harmony import */ var _page_home_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./page-home-module */ \"./src/page-home-module.js\");\n/* harmony import */ var _page_foods_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./page-foods-module */ \"./src/page-foods-module.js\");\n/* harmony import */ var _page_contact_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./page-contact-module */ \"./src/page-contact-module.js\");\n\n\n\n\n\nconst loadPage = () => {\n  const content = document.querySelector('#content');\n  const homepage = (0,_page_home_module__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n  const foodsPage = (0,_page_foods_module__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n  const contactPage = (0,_page_contact_module__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\n  homepage.setAttribute('data-page', 'homepage');\n  foodsPage.setAttribute('data-page', 'foods');\n  contactPage.setAttribute('data-page', 'contact');\n  homepage.classList.add('is-active-page');\n  foodsPage.classList.add('is-hidden');\n  contactPage.classList.add('is-hidden');\n\n  content.appendChild((0,_header_footer_module__WEBPACK_IMPORTED_MODULE_0__.createNavbar)());\n  content.appendChild((0,_header_footer_module__WEBPACK_IMPORTED_MODULE_0__.createHero)());\n  content.appendChild(homepage);\n  content.appendChild(foodsPage);\n  content.appendChild(contactPage);\n  content.appendChild((0,_header_footer_module__WEBPACK_IMPORTED_MODULE_0__.createFooter)());\n  setEventListeners();\n};\n\nconst setEventListeners = () => {\n  const navbarLinks = document.querySelectorAll('.navbar-item');\n  navbarLinks.forEach(link => link.addEventListener('click', () => {\n    const currentPage = document.querySelector('.is-active-page');\n    const newPage = document.querySelector(`[data-page=${link.id}]`);\n    currentPage.classList.remove('is-active-page');\n    currentPage.classList.add('is-hidden');\n    newPage.classList.add('is-active-page');\n    newPage.classList.remove('is-hidden');\n  }));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (loadPage);\n\n//# sourceURL=webpack://restaurant-page/./src/page-load.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _header_footer_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./header-footer-module */ \"./src/header-footer-module.js\");\n/* harmony import */ var _page_home_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./page-home-module */ \"./src/page-home-module.js\");\n/* harmony import */ var _page_foods_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./page-foods-module */ \"./src/page-foods-module.js\");\n/* harmony import */ var _page_contact_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./page-contact-module */ \"./src/page-contact-module.js\");\n\n\n\n\n\nconst loadPage = () => {\n  const body = document.querySelector('body');\n  const content = document.createElement('div');\n  content.setAttribute('id', 'content');\n  body.prepend(content);\n  const homepage = (0,_page_home_module__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n  const foodsPage = (0,_page_foods_module__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n  const contactPage = (0,_page_contact_module__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\n  homepage.setAttribute('data-page', 'homepage');\n  foodsPage.setAttribute('data-page', 'foods');\n  contactPage.setAttribute('data-page', 'contact');\n  homepage.classList.add('is-active-page');\n  foodsPage.classList.add('is-hidden');\n  contactPage.classList.add('is-hidden');\n\n  content.appendChild((0,_header_footer_module__WEBPACK_IMPORTED_MODULE_0__.createNavbar)());\n  content.appendChild((0,_header_footer_module__WEBPACK_IMPORTED_MODULE_0__.createHero)());\n  content.appendChild(homepage);\n  content.appendChild(foodsPage);\n  content.appendChild(contactPage);\n  content.appendChild((0,_header_footer_module__WEBPACK_IMPORTED_MODULE_0__.createFooter)());\n  setEventListeners();\n};\n\nconst setEventListeners = () => {\n  const navbarLinks = document.querySelectorAll('.navbar-item');\n  navbarLinks.forEach(link => link.addEventListener('click', () => {\n    const currentPage = document.querySelector('.is-active-page');\n    const newPage = document.querySelector(`[data-page=${link.id}]`);\n    currentPage.classList.remove('is-active-page');\n    currentPage.classList.add('is-hidden');\n    newPage.classList.add('is-active-page');\n    newPage.classList.remove('is-hidden');\n  }));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (loadPage);\n\n//# sourceURL=webpack://restaurant-page/./src/page-load.js?");
+
+/***/ }),
+
+/***/ "./src/avgolemono.jpg":
+/*!****************************!*\
+  !*** ./src/avgolemono.jpg ***!
+  \****************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"dc9ea04a8b99f704bf04.jpg\";\n\n//# sourceURL=webpack://restaurant-page/./src/avgolemono.jpg?");
+
+/***/ }),
+
+/***/ "./src/dolmades.jpg":
+/*!**************************!*\
+  !*** ./src/dolmades.jpg ***!
+  \**************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"e52fd3b2c2092a9d9ffb.jpg\";\n\n//# sourceURL=webpack://restaurant-page/./src/dolmades.jpg?");
+
+/***/ }),
+
+/***/ "./src/gyro.jpg":
+/*!**********************!*\
+  !*** ./src/gyro.jpg ***!
+  \**********************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"0bc722e28470183776e7.jpg\";\n\n//# sourceURL=webpack://restaurant-page/./src/gyro.jpg?");
+
+/***/ }),
+
+/***/ "./src/lamb.jpg":
+/*!**********************!*\
+  !*** ./src/lamb.jpg ***!
+  \**********************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"38296a1de39510ed7649.jpg\";\n\n//# sourceURL=webpack://restaurant-page/./src/lamb.jpg?");
+
+/***/ }),
+
+/***/ "./src/pastitsio.jpg":
+/*!***************************!*\
+  !*** ./src/pastitsio.jpg ***!
+  \***************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"783ef52054d50f5f6104.jpg\";\n\n//# sourceURL=webpack://restaurant-page/./src/pastitsio.jpg?");
+
+/***/ }),
+
+/***/ "./src/saganaki.jpg":
+/*!**************************!*\
+  !*** ./src/saganaki.jpg ***!
+  \**************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"feee301f0ad184cb7338.jpg\";\n\n//# sourceURL=webpack://restaurant-page/./src/saganaki.jpg?");
+
+/***/ }),
+
+/***/ "./src/souvlaki-meal.jpg":
+/*!*******************************!*\
+  !*** ./src/souvlaki-meal.jpg ***!
+  \*******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"eccf84a23a3619e6ef1c.jpg\";\n\n//# sourceURL=webpack://restaurant-page/./src/souvlaki-meal.jpg?");
+
+/***/ }),
+
+/***/ "./src/spanakopita.jpg":
+/*!*****************************!*\
+  !*** ./src/spanakopita.jpg ***!
+  \*****************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"6f90a4e3e6c3c98dd917.jpg\";\n\n//# sourceURL=webpack://restaurant-page/./src/spanakopita.jpg?");
+
+/***/ }),
+
+/***/ "./src/tiropita.jpg":
+/*!**************************!*\
+  !*** ./src/tiropita.jpg ***!
+  \**************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"cc904d98a0fe51af23e2.jpg\";\n\n//# sourceURL=webpack://restaurant-page/./src/tiropita.jpg?");
 
 /***/ })
 
@@ -251,6 +341,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -265,6 +367,26 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
 /************************************************************************/

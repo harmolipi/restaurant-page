@@ -7,9 +7,7 @@ const createFoodItem = (picture, label) => {
   foodCardImageContainer.classList.add('card-image');
   const foodImageContainer = document.createElement('figure');
   foodImageContainer.classList.add('image', 'is-4by3');
-  const foodImage = document.createElement('img');
-  foodImage.src = picture;
-  
+  const foodImage = picture;
   parentTile.appendChild(childTile);
   childTile.appendChild(foodCardImageContainer);
   foodCardImageContainer.appendChild(foodImageContainer);

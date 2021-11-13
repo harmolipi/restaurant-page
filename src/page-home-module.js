@@ -1,11 +1,20 @@
-import {createFoodItem, createFoodDisplay} from "./food-items-module";
-import {createBlockSpacer} from "./block-spacer-module";
+import {createFoodItem, createFoodDisplay} from './food-items-module';
+import {createBlockSpacer} from './block-spacer-module';
+import Souvlaki from './souvlaki-meal.jpg';
+import Pastitsio from '/src/pastitsio.jpg';
+import Gyro from '/src/gyro.jpg';
 
 const createHomepage = () => {
+  const souvlakiPicture = new Image();
+  const pastitsioPicture = new Image();
+  const gyroPicture = new Image();
+  souvlakiPicture.src = Souvlaki;
+  pastitsioPicture.src = Pastitsio;
+  gyroPicture.src = Gyro;
   const homepageFoods = [
-    createFoodItem('/src/souvlaki-meal.jpg', 'Souvlaki'),
-    createFoodItem('/src/pastitsio.jpg', 'Pastitsio'),
-    createFoodItem('/src/gyro.jpg', 'Gyro')
+    createFoodItem(souvlakiPicture, 'Souvlaki'),
+    createFoodItem(pastitsioPicture, 'Pastitsio'),
+    createFoodItem(gyroPicture, 'Gyro')
   ]
   const homepage = document.createElement('div');
   homepage.setAttribute('id', 'homepage');
